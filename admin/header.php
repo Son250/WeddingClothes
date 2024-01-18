@@ -36,19 +36,19 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="?act=trangchu">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="?url=trangchu">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink" style="color: #f1c40f;"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">DC MOBILE</div>
+                <div class="sidebar-brand-text mx-3">Nhóm 6</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="?act=trangchu">
+            <li class="nav-item urlive">
+                <a class="nav-link" href="?url=trangchu">
                     <i class="fas fa-fw fa-house-damage"></i>
                     <span>Home</span>
             </li>
@@ -70,10 +70,10 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="?act=listqtv">Danh sách quản trị viên</a>
-                        <a class="collapse-item" href="?act=listtv">Danh sách người dùng</a>
-                        <a class="collapse-item" href="?act=listtkkhoa">Tài khoản bị khóa</a>
-                        <a class="collapse-item" href="?act=addtk" style="background-color: #48dbfb;">
+                        <a class="collapse-item" href="?url=listQtv">Danh sách quản trị viên</a>
+                        <a class="collapse-item" href="?url=listTv">Danh sách người dùng</a>
+                        <a class="collapse-item" href="?url=listTkKhoa">Tài khoản bị khóa</a>
+                        <a class="collapse-item" href="?url=addTk" style="background-color: #48dbfb;">
                             <i class="fas fa-fw fa-plus" style="color: #576574;"></i>
                             <span>Thêm mới</span></a>
                     </div>
@@ -89,8 +89,8 @@
                 </a>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="?act=listdm">Danh sách danh mục</a>
-                        <a class="collapse-item" href="?act=adddm" style="background-color: #48dbfb;">
+                        <a class="collapse-item" href="?url=listDm">Danh sách danh mục</a>
+                        <a class="collapse-item" href="?url=addDm" style="background-color: #48dbfb;">
                             <i class="fas fa-fw fa-plus" style="color: #576574;"></i>
                             <span>Thêm mới</span></a>
                     </div>
@@ -106,8 +106,8 @@
                 </a>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="?act=listsp">Danh sách sản phẩm</a>
-                        <a class="collapse-item" href="?act=addsp" style="background-color: #48dbfb;">
+                        <a class="collapse-item" href="?url=listSp">Danh sách sản phẩm</a>
+                        <a class="collapse-item" href="?url=addSp" style="background-color: #48dbfb;">
                             <i class="fas fa-fw fa-plus" style="color: #576574;"></i>
                             <span>Thêm mới</span></a>
                     </div>
@@ -123,17 +123,17 @@
                 </a>
                 <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="?act=listdh">Danh sách đơn hàng</a>
-                        <a class="collapse-item" href="?act=kiemduyet">Kiểm duyệt đơn hàng <sup></sup></a>
-                        <a class="collapse-item" href="?act=dagiao">Danh sách đã giao</a>
-                        <a class="collapse-item" href="?act=dahuy">Danh sách đã hủy</a>
+                        <a class="collapse-item" href="?url=listdh">Danh sách đơn hàng</a>
+                        <a class="collapse-item" href="?url=kiemduyet">Kiểm duyệt đơn hàng <sup></sup></a>
+                        <a class="collapse-item" href="?url=dagiao">Danh sách đã giao</a>
+                        <a class="collapse-item" href="?url=dahuy">Danh sách đã hủy</a>
                     </div>
                 </div>
             </li>
             
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="?act=listbl">
+                <a class="nav-link" href="?url=listbl">
                     <i class="fas fa-fw fa-comment"></i>
                     <span>Quản lý bình luận</span></a>
             </li>
@@ -147,8 +147,8 @@
                 </a>
                 <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="?act=bieudo">Biểu đồ</a>
-                        <a class="collapse-item" href="?act=danhsachthongke">Danh sách</a>
+                        <a class="collapse-item" href="?url=bieudo">Biểu đồ</a>
+                        <a class="collapse-item" href="?url=danhsachthongke">Danh sách</a>
                     </div>
                 </div>
             </li>
@@ -160,8 +160,8 @@
                 </a>
                 <div id="collapseSevent" class="collapse" aria-labelledby="headingSevent" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="?act=qltintuc">Quản lý tin tức</a>
-                        <a class="collapse-item" href="?act=qlbanner">Quản lý banner</a>
+                        <a class="collapse-item" href="?url=qltintuc">Quản lý tin tức</a>
+                        <a class="collapse-item" href="?url=qlbanner">Quản lý banner</a>
                     </div>
                 </div>
             </li>
