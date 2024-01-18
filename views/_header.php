@@ -22,7 +22,12 @@
     <!-- color scheme -->
     <link id="colors" href="../assets/css-view/colors/scheme-01.css" rel="stylesheet" type="text/css">
 
+    <!-- Link bootstrap 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- link bootstrap 5 -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css" integrity="sha512-ioRJH7yXnyX+7fXTQEKPULWkMn3CqMcapK0NNtCN8q//sW7ZeVFcbMJ9RvX99TwDg6P8rAH2IqUSt2TLab4Xmw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- 4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" integrity="sha512-NtU/Act0MEcVPyqC153eyoq9L+UHkd0s22FjIaKByyA6KtZPrkm/O5c5xzaia4pyCfReCS634HyQ7tJwKNxC/g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -47,13 +52,13 @@
                     </div>
 
                     <div class="topbar-right">
-                        <!-- <div class="social-icons">
+                        <div class="social-icons">
                             <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
                             <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
                             <a href="#"><i class="fa fa-youtube fa-lg"></i></a>
                             <a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
                             <a href="#"><i class="fa fa-instagram fa-lg"></i></a>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -66,7 +71,7 @@
                                 <div class="de-flex-col">
                                     <!-- logo begin -->
                                     <div id="logo">
-                                        <a href="index.html">
+                                        <a href="index.php">
                                             <!-- <img class="logo-1" src="../assets/images-view/logo-light.png" alt=""> -->
                                             <img class="logo-2" width="200px" src="../assets/images-view/logo.png" alt="">
                                         </a>
@@ -76,7 +81,7 @@
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
-                                    <li><a class="menu-item" href="index.html">Trang chủ</a>
+                                    <li><a class="menu-item" href="index.php">Trang chủ</a>
                                         <ul>
                                             <li><a class="menu-item" href="02_dark-index-1.html">New: Homepage 1 Dark</a></li>
                                             <li><a class="menu-item" href="02_dark-index-2.html">New: Homepage 2 Dark</a></li>
@@ -144,28 +149,12 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <!-- <li><a class="menu-item" href="#">Elements</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="preloader.html">Preloader</a></li>
-                                            <li><a class="menu-item" href="icon-boxes.html">Icon Boxes</a></li>
-                                            <li><a class="menu-item" href="badge.html">Badge</a></li>
-                                            <li><a class="menu-item" href="counters.html">Counters</a></li>
-                                            <li><a class="menu-item" href="gallery-popup.html">Gallery Popup</a></li>
-                                            <li><a class="menu-item" href="icons-elegant.html">Icons Elegant</a></li>
-                                            <li><a class="menu-item" href="icons-etline.html">Icons Etline</a></li>
-                                            <li><a class="menu-item" href="icons-font-awesome.html">Icons Font Awesome</a></li>
-                                            <li><a class="menu-item" href="map.html">Map</a></li>
-                                            <li><a class="menu-item" href="modal.html">Modal</a></li>
-                                            <li><a class="menu-item" href="popover.html">Popover</a></li>
-                                            <li><a class="menu-item" href="tabs.html">Tabs</a></li>
-                                            <li><a class="menu-item" href="tooltips.html">Tooltips</a></li>
-                                        </ul>
-                                    </li> -->
+                                 
                                 </ul>
                             </div>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
-                                    <a href="login.html" class="btn-main bg-info">Đăng nhập</a>
+                                    <a href="?act=login" class="btn-main bg-info">Đăng nhập</a>
                                     <span id="menu-btn"></span>
                                 </div>
                             </div>

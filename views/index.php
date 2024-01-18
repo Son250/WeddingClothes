@@ -7,6 +7,15 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
         case 'abc':
 
             break;
+        case 'login':
+            include 'login.php';
+            break;
+        case 'register':
+            include 'register.php';
+            break;
+        case 'detailProduct':
+            include 'detailProduct.php';
+            break;
         default:
             include "trangchu/home.php";
             break;
