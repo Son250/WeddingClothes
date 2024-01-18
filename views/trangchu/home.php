@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="d-price">
                                         Daily rate from <span>$265</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                        <a class="btn-main" href="?act=detailProduct">Rent Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="d-price">
                                         Daily rate from <span>$244</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                        <a class="btn-main" href="?act=detailProduct">Rent Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@
                                     </div>
                                     <div class="d-price">
                                         Daily rate from <span>$167</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                        <a class="btn-main" href="?act=detailProduct">Rent Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                                     </div>
                                     <div class="d-price">
                                         Daily rate from <span>$147</span>
-                                        <a class="btn-main" href="car-single.html">Rent Now</a>
+                                        <a class="btn-main" href="?act=detailProduct">Rent Now</a>
                                     </div>
                                 </div>
                             </div>
