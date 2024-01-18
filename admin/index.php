@@ -1,5 +1,7 @@
 <?php
 include 'header.php';
+include '../models/db.php';
+include '../models/product.php';
 
 if (isset($_GET['url']) && $_GET['url'] != "") {
     $url = $_GET['url'];
@@ -10,7 +12,20 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
         //end danh muc
 
         case 'listSp':
+            $listsp = load_all_sp();
             include 'products/listProducts.php';
+            break;
+        case 'addSp':
+            if (isset($_POST['submit'])){
+                $productName = $_POST['productName'];
+                $image = $_POST['image'][''];
+                $description = $_POST['description'];
+                $price = $_POST['price'];
+                $quantity = $_POST['quantity'];
+                insert_sp($productName, $image , $description, $price, $quantity);
+                header("Location: index.php");
+            }            
+            include 'products/addSp.php';
             break;
         //end san pham
 
