@@ -2,7 +2,10 @@
 session_start();
 include '../models/db.php';
 include '../models/user.php';
+include '../models/product.php';
 include 'header.php';
+
+
 
 if (isset($_GET['url']) && $_GET['url'] != "") {
     $url = $_GET['url'];
@@ -13,10 +16,9 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
         //end danh muc
 
         case 'listSp':
+            $listsp = load_all_sp();
             include 'products/listProducts.php';
             break;
-        //end san pham
-        
         case 'listQtv':
             if(isset($_POST['search'])){
                 $kyw=$_POST['kyw'];
