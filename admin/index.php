@@ -2,6 +2,7 @@
 include '../models/db.php';
 include '../models/user.php';
 include 'header.php';
+include '../models/product.php';
 
 if (isset($_GET['url']) && $_GET['url'] != "") {
     $url = $_GET['url'];
@@ -12,6 +13,7 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
         //end danh muc
 
         case 'listSp':
+            $listsp = load_all_sp();
             include 'products/listProducts.php';
             break;
         //end san pham

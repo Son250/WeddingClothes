@@ -4,8 +4,8 @@
     <form action="?url=listSp" method="post">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <button type="button" class="btn btn-secondary btn-sm" >Chọn tất cả</button>
-                <button type="button" class="btn btn-secondary btn-sm" >Bỏ chọn tất cả</button>
+                <button type="button" class="btn btn-secondary btn-sm">Chọn tất cả</button>
+                <button type="button" class="btn btn-secondary btn-sm">Bỏ chọn tất cả</button>
                 <button type="submit" name="xoacacmucchon" class="btn btn-secondary btn-sm">Xóa các mục đã chọn</button>
                 <a href="?url=addSp"><button type="button" class="btn btn-secondary btn-sm">Nhập thêm</button></a>
                 <div class="float-right">
@@ -36,20 +36,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="align-middle text-center"><input type="checkbox" name="select[]" id="" value=""></td>
-                                <td class=" align-middle text-center">1</td>
-                                <td class="col-2 align-middle">Váy cưới</td>
-                                <td  class="col-1 align-middle"><img src="../uploads/" alt="err" height="60px"></td>
-                                <td  class="col-1 align-middle">200.000.000</td>
-                                <td  class="align-middle">15</td>
-                                <td  class="col-3 align-middle">bach bach bach bach bach bach bach</td>
-                                <td  class="col-2 align-middle">ten danh muc</td>
-                                <td class="col-2 align-middle"><a href="?url=updateSp"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> | 
-                                    <a href="?url=xoaSp"><button type="button" class="btn btn-secondary btn-sm">Xóa</button></a></td>
-                            </tr>
+                            <?php foreach ($listsp as $sp) : ?>
+                                <tr>
+                                    <td class="align-middle text-center"><input type="checkbox" name="select[]" id="" sp=""></td>
+                                    <td class=" align-middle text-center"><?= $sp['id'] ?></td>
+                                    <td class="col-2 align-middle"><?= $sp['productName'] ?></td>
+                                    <td class="col-1 align-middle"><img src="../uploads/<?= $sp['image'] ?>" alt="err" height="60px"></td>
+                                    <td class="col-1 align-middle"><?= $sp['price'] ?></td>
+                                    <td class="align-middle"><?= $sp['quantity'] ?></td>
+                                    <td class="col-3 align-middle"><?= $sp['description'] ?></td>
+                                    <td class="col-2 align-middle"><?= $sp['idCategory'] ?></td>
+                                    <td class="col-2 align-middle"><a href="?url=updateSp"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> |
+                                        <a href="?url=xoaSp"><button type="button" class="btn btn-secondary btn-sm">Xóa</button></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
-                    </table>  
+                    </table>
                 </div>
             </div>
         </div>
