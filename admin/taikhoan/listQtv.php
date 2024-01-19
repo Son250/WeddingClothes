@@ -31,7 +31,9 @@
                                 <th>Số điện thoại</th>
                                 <th>Địa chỉ</th>
                                 <th>Vai trò</th>
+                                <?php if(isset($_SESSION['user'])&&($_SESSION['user']['idRole']==1)): ?>
                                 <th>Action</th>
+                                <?php endif; ?>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,9 +52,11 @@
                                     <td class="col-1 align-middle"><?= $val['userName'];?></td>
                                     <td class="col-1 align-middle"><?= $val['phoneNumber'];?></td>
                                     <td class="col-2 align-middle"><?= $val['address'];?></td>
-                                    <td><?= $val['idRole'];?></td>
-                                    <td class="col-2 align-middle text-center"><a href="?url=updateTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> | 
-                                        <a href="?url=xoaTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Khóa</button></a></td>
+                                    <td class="col-2"><?= $val['idRole'];?></td>
+                                    <?php if(isset($_SESSION['user'])&&($_SESSION['user']['idRole']==1)): ?>
+                                        <td class="col-2 align-middle text-center"><a href="?url=updateTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> 
+                                        | <a href="?url=khoaTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Khóa</button></a></td>
+                                    <?php endif; ?>
                                 </tr>  
                             <?php endforeach;?>                
                         </tbody>

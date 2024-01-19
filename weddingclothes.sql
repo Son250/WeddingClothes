@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 18, 2024 lúc 04:22 AM
+-- Thời gian đã tạo: Th1 19, 2024 lúc 04:29 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.0.28
 
@@ -33,6 +33,14 @@ CREATE TABLE `category` (
   `description` varchar(255) NOT NULL,
   `option` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0. Chưa xóa 1. Đã xóa'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `category`
+--
+
+INSERT INTO `category` (`id`, `name`, `description`, `option`) VALUES
+(1, 'Váy cưới', 'Dành cho nữ', 0),
+(2, 'Áo Vest', 'Dành cho nam', 0);
 
 -- --------------------------------------------------------
 
@@ -130,7 +138,7 @@ CREATE TABLE `user` (
   `password` varchar(50) NOT NULL,
   `phoneNumber` varchar(20) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `option` tinyint(1) NOT NULL DEFAULT 0,
+  `option` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0. Tốt 1. Đã khóa',
   `idRole` int(11) NOT NULL COMMENT '1. System Administrator 2. Admin 3. Thành viên'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -139,7 +147,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `fullName`, `userName`, `password`, `phoneNumber`, `address`, `option`, `idRole`) VALUES
-(1, 'Nguyễn Đình Cường', 'cuongsix2004', 'cuongsix2004', '0964426518', 'Phú nghĩa, Chương Mỹ, Hà Nội', 0, 1);
+(1, 'Nguyễn Đình Cường', 'cuongsix2004', 'cuongsix2004', '0964426518', 'Phú nghĩa, Chương Mỹ, Hà Nội', 0, 1),
+(11, 'Nguyễn Văn Vũ', 'vu123', 'vu123', '0123456789', 'Ha Noi', 0, 3),
+(12, 'Nguyễn Văn Bảo', 'vanbao123', 'vanbao123', '0123456789', 'Ha Noi', 1, 3);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -201,7 +211,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `notification`
@@ -237,7 +247,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
