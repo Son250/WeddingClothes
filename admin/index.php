@@ -19,6 +19,8 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
             $listsp = load_all_sp();
             include 'products/listProducts.php';
             break;
+        //end san pham
+        
         case 'listQtv':
             if(isset($_POST['search'])){
                 $kyw=$_POST['kyw'];
