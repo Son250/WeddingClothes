@@ -4,8 +4,8 @@
     <form action="?url=listSp" method="post">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <button type="button" class="btn btn-secondary btn-sm" >Chọn tất cả</button>
-                <button type="button" class="btn btn-secondary btn-sm" >Bỏ chọn tất cả</button>
+                <button type="button" class="btn btn-secondary btn-sm">Chọn tất cả</button>
+                <button type="button" class="btn btn-secondary btn-sm">Bỏ chọn tất cả</button>
                 <button type="submit" name="xoacacmucchon" class="btn btn-secondary btn-sm">Xóa các mục đã chọn</button>
                 <a href="?url=addSp"><button type="button" class="btn btn-secondary btn-sm">Nhập thêm</button></a>
                 <div class="float-right">
@@ -51,7 +51,7 @@
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
-                    </table>  
+                    </table>
                 </div>
             </div>
         </div>

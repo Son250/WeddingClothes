@@ -1,4 +1,5 @@
 <?php
+
 include_once "../models/db.php";
 
 function load_all_sp(){
@@ -8,4 +9,7 @@ function load_all_sp(){
 function load_one_sp($id){
     $sql = "SELECT * FROM product WHERE id = $id";
     return getData($sql, false);
+
 }
+
+
