@@ -7,7 +7,6 @@ include '../models/category.php';
 include 'header.php';
 
 
-
 if (isset($_GET['url']) && $_GET['url'] != "") {
     $url = $_GET['url'];
     switch ($url) {
