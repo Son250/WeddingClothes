@@ -11,8 +11,70 @@ include 'header.php';
 if (isset($_GET['url']) && $_GET['url'] != "") {
     $url = $_GET['url'];
     switch ($url) {
-        case 'listDm':
-            include 'category/listCategory.php';
+        case 'listCategory':
+            if (isset($_POST['search'])) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = '';
+            }
+            $listcategory = load_all_category($kyw);
+            include "category/listCategory.php";
+            break;
+        case 'addCategory':
+            $nameErr = "";
+            if (isset($_POST['submit'])) {
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                if (empty(trim($name))) {
+                    $nameErr = "Vui lòng nhập tên danh mục !";
+                } else {
+                    insert_category($name, $description, 0);
+                    echo '<script>
+                            alert("Bạn đã thêm thành công !");
+                            window.location.href="index.php?url=listCategory";
+                        </script>';
+                }
+            }
+            include "category/add.php";
+            break;
+        case 'updateCategory':
+            $nameErr = "";
+            if (isset($_GET['id']) && ($_GET['id'] != "")) {
+                $id = $_GET['id'];
+                $category = load_one_category($id);
+                if ($category) {
+                    $id = $category['id'];
+                    $name = $category['name'];
+                }
+            }
+            if (isset($_POST['submit'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                if (empty(trim($name))) {
+                    $nameErr = "Vui lòng nhập tên danh mục !";
+                } else {
+                    update_category($id, $name);
+                    echo '<script>
+                            alert("Bạn đã sửa danh mục thành công !");
+                            window.location.href="index.php?url=listCategory";
+                        </script>';
+                }
+            }
+            include "category/update.php";
+            break;
+        case 'deleteCategory':
+            if (isset($_GET['id']) && ($_GET['id'] != "")) {
+                $id = $_GET['id'];
+                $result = delete_category($id);
+                if (!$result) {
+                    echo '<script>
+                                alert("Bạn đã xóa thành công !");
+                                window.location.href="index.php?url=listCategory";
+                            </script>';
+                }
+            }
+
+            include "category/listCategory.php";
             break;
             //end danh muc
         case 'listSp':

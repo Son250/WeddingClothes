@@ -85,8 +85,8 @@
                 </a>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="?url=listDm">Danh sách danh mục</a>
-                        <a class="collapse-item" href="?url=addDm" style="background-color: #48dbfb;">
+                        <a class="collapse-item" href="?url=listCategory">Danh sách danh mục</a>
+                        <a class="collapse-item" href="?url=addCategory" style="background-color: #48dbfb;">
                             <i class="fas fa-fw fa-plus" style="color: #576574;"></i>
                             <span>Thêm mới</span></a>
                     </div>
