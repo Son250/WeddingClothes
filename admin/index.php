@@ -3,6 +3,7 @@ session_start();
 include '../models/db.php';
 include '../models/user.php';
 include '../models/product.php';
+include '../models/category.php';
 include 'header.php';
 
 
@@ -24,6 +25,7 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
             include 'products/listProducts.php';
             break;
         case 'addSp':
+            $idCate = getCategory();
             if (isset($_POST['btn-addProduct'])) {
                 $nameSP = $_POST['productName'];
                 $photo = "";
