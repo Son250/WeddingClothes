@@ -38,7 +38,7 @@
                             <tbody>
                                 <?php foreach ($listsp as $sp) : ?>
                                     <tr>
-                                        <td class="align-middle text-center"><input type="checkbox" name="select[]" id="" sp=""></td>
+                                        <td class="align-middle text-center"><input type="checkbox" name="option" id="" sp=""></td>
                                         <td class=" align-middle text-center"><?= $sp['id'] ?></td>
                                         <td class="col-2 align-middle"><?= $sp['productName'] ?></td>
                                         <td class="col-1 align-middle"><img src="../assets/uploads/<?= $sp['image'] ?>" alt="err" width="70px" height="100px"></td>
@@ -48,10 +48,9 @@
 
                                         <td class="col-2 align-middle">
                                             <?= $sp['name'] ?>
-
                                         </td>
-                                        <td class="col-2 align-middle"><a href="?url=updateSp"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> |
-                                            <a href="?url=xoaSp"><button type="button" class="btn btn-secondary btn-sm">Xóa</button></a>
+                                        <td class="col-2 align-middle"><a href="?url=editSp&id=<?=$sp['id']?>"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> |
+                                            <a href="?url=xoaSp&id=<?=$sp['id']?>"><button type="button" class="btn btn-secondary btn-sm">Xóa</button></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
