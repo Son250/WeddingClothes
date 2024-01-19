@@ -1,7 +1,7 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <h1 class="h3 mb-2 text-gray-800 mb-5">Danh sách tài khoản</h1>
-    <form action="?url=listQtv" method="post">
+    <form action="?url=listTkKhoa" method="post">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <button type="button" class="btn btn-secondary btn-sm">Chọn tất cả</button>
@@ -31,16 +31,20 @@
                                 <th>Số điện thoại</th>
                                 <th>Địa chỉ</th>
                                 <th>Vai trò</th>
+                                <th>Trạng thái</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach($listTk as $val): ?>
                             <?php 
-                                if($val['idRole']==1){
-                                    $val['idRole']="Quản trị hệ thống";
-                                }else if($val['idRole']==2){
+                                if($val['idRole']==2){
                                     $val['idRole']="Quản trị viên";
+                                }else if($val['idRole']==3){
+                                    $val['idRole']="Thành viên";
+                                }
+                                if($val['option']==1){
+                                    $val['option']="Đã khóa";
                                 }
                             ?>
                                 <tr>
@@ -51,8 +55,11 @@
                                     <td class="col-1 align-middle"><?= $val['phoneNumber'];?></td>
                                     <td class="col-2 align-middle"><?= $val['address'];?></td>
                                     <td class="col-2"><?= $val['idRole'];?></td>
-                                    <td class="col-2 align-middle text-center"><a href="?url=updateTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> | 
-                                        <a href="?url=khoaTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Khóa</button></a></td>
+                                    <td class="col-1 align-middle"><?= $val['option'];?></td>
+                                    <td class="col-2 align-middle text-center"><a href="?url=moKhoaTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Mở khóa</button></a> 
+                                    <?php if(isset($_SESSION['user'])&&($_SESSION['user']['idRole']==1)): ?>
+                                        | <a href="?url=xoaTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Xóa</button></a></td>
+                                    <?php endif; ?>
                                 </tr>  
                             <?php endforeach;?>                
                         </tbody>

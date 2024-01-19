@@ -50,7 +50,7 @@
                                     <td class="col-2 align-middle"><?= $val['address'];?></td>
                                     <td><?= $val['idRole'];?></td>
                                     <td class="col-2 align-middle text-center"><a href="?url=updateTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> | 
-                                        <a href="?url=xoaTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Khóa</button></a></td>
+                                        <a href="?url=khoaTk&id=<?= $val['id'];?>"><button type="button" class="btn btn-secondary btn-sm">Khóa</button></a></td>
                                 </tr>  
                             <?php endforeach;?>                
                         </tbody>
