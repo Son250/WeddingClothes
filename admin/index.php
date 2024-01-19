@@ -1,8 +1,11 @@
 <?php
+session_start();
 include '../models/db.php';
 include '../models/user.php';
-include 'header.php';
 include '../models/product.php';
+include 'header.php';
+
+
 
 if (isset($_GET['url']) && $_GET['url'] != "") {
     $url = $_GET['url'];
@@ -16,15 +19,13 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
             $listsp = load_all_sp();
             include 'products/listProducts.php';
             break;
-        //end san pham
-
         case 'listQtv':
             if(isset($_POST['search'])){
                 $kyw=$_POST['kyw'];
             }else{
                 $kyw="";
             }
-            $listTk=load_all_user(1,$kyw);
+            $listTk=load_all_user(1,$kyw,0);
             include 'taikhoan/listQtv.php';
             break;
         case 'listTv':
@@ -33,10 +34,18 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
             }else{
                 $kyw="";
             }
-            $listTk=load_all_user(2,$kyw);
+            $listTk=load_all_user(2,$kyw,0);
             include 'taikhoan/listTv.php';
             break;
-        //end tai khoan
+        case 'listTkKhoa':
+            if(isset($_POST['search'])){
+                $kyw=$_POST['kyw'];
+            }else{
+                $kyw="";
+            }
+            $listTk=load_all_user(2,$kyw,1);
+            include 'taikhoan/listTkKhoa.php';
+            break;
         case 'addTk':
             if(isset($_POST['submit'])){
                 $fullName=$_POST['fullName'];
@@ -92,8 +101,63 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
             }
             include 'taikhoan/update.php';
             break;
-        case 'deleteTk':
+        case 'khoaTk':
+            if(isset($_GET['id'])&&($_GET['id']!="")){
+                $id=$_GET['id'];
+                $tk=load_one_tk($id);
+                if($tk){
+                    $result=update_option_tk($tk['id'],1);
+                    if($tk['idRole']==3){
+                        if(!$result){
+                            echo '<script>
+                                    alert("Bạn đã khóa tài khoản thành công !");
+                                    window.location.href="?url=listTv";
+                                </script>';
+                        }
+                    }else{
+                        if(!$result){
+                            echo '<script>
+                                    alert("Bạn đã khóa tài khoản thành công !");
+                                    window.location.href="?url=listQtv";
+                                </script>';
+                        }
+                    }
+                }
+            }
             break;
+        case 'moKhoaTk':
+            if(isset($_GET['id'])&&($_GET['id']!="")){
+                $id=$_GET['id'];
+                $tk=load_one_tk($id);
+                if($tk){
+                    $result=update_option_tk($tk['id'],0);
+                    if(!$result){
+                        echo '<script>
+                                alert("Bạn đã mở khóa tài khoản thành công !");
+                                window.location.href="?url=listTkKhoa";
+                            </script>';
+                    }
+                    
+                }
+            }
+            break;
+        case 'xoaTk':
+            if(isset($_GET['id'])&&($_GET['id']!="")){
+                $id=$_GET['id'];
+                $tk=load_one_tk($id);
+                if($tk){
+                    $result=delete_tk($tk['id']);
+                    if(!$result){
+                        echo '<script>
+                                alert("Bạn đã xóa tài khoản thành công !");
+                                window.location.href="?url=listTkKhoa";
+                            </script>';
+                    }
+                    
+                }
+            }
+            break;
+        //end tai khoan
         default:
             include "trangchu/home.php";
             break;
