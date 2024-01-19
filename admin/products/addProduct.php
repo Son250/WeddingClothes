@@ -18,23 +18,23 @@
                 <form action="?url=addSp" method="post" enctype="multipart/form-data">
                     <div>
                         <label for="">Tên sản phẩm</label>
-                        <input type="text" name="productName" placeholder="Nhập tên sản phẩm">
+                        <input type="text" name="productName" required placeholder="Nhập tên sản phẩm">
                     </div>
                     <div>
                         <label for="">Ảnh sản phẩm</label>
-                        <input type="file" name="image">
+                        <input type="file" name="image" required>
                     </div>
                     <div>
                         <label for="">Giá sản phẩm</label>
-                        <input type="text" name="price" placeholder="Nhập giá sản phẩm">
+                        <input type="text" name="price" required placeholder="Nhập giá sản phẩm">
                     </div>
                     <div>
                         <label for="">Số lượng</label>
-                        <input type="number" name="quantity" placeholder="Nhập số lượng sản phẩm">
+                        <input type="number" name="quantity" required placeholder="Nhập số lượng sản phẩm">
                     </div>
                     <div>
                         <label for="">Mô tả sản phẩm</label>
-                        <input type="text" name="description" placeholder="Mô tả sản phẩm">
+                        <input type="text" name="description" required placeholder="Mô tả sản phẩm">
                     </div>
                     <div>
                         <label for="">Danh mục</label>
