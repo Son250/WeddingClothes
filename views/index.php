@@ -13,6 +13,11 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
         case 'register':
             include 'register.php';
             break;
+
+        case 'contact':
+            include 'contact.php';
+            break;
+
         case 'detailProduct':
             include 'detailProduct.php';
             break;

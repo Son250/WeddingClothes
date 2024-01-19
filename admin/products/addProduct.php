@@ -39,10 +39,12 @@
                     <div>
                         <label for="">Danh mục</label>
                         <select name="idCategory">
+
                             <?php foreach ($danhmuc as $key => $value) : ?>
                                 <option value="<?php echo $value['id']; ?>">
                                     <?php echo $value['name']; ?>
                                 </option>
+
                             <?php endforeach; ?>
                         </select>
                     </div>

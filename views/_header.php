@@ -131,7 +131,7 @@
                                             <li><a class="menu-item" href="404.html">Page 404</a></li>
                                         </ul>
                                     </li> -->
-                                    <li><a class="menu-item" href="#">Liên hệ</a>
+                                    <li><a class="menu-item" href="?act=contact">Liên hệ</a>
                                         <ul>
                                             <li><a class="menu-item" href="news-standart-right-sidebar.html">News Standard</a>
                                                 <ul>
