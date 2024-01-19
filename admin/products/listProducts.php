@@ -46,14 +46,7 @@
                                         <td class="align-middle"><?= $sp['quantity'] ?></td>
                                         <td class="col-3 align-middle"><?= $sp['description'] ?></td>
                                         <td class="col-2 align-middle">
-                                            <?php if ($sp['idCategory'] == 1) {
-                                                echo "Dành cho Nữ";
-                                            } elseif (($sp['idCategory'] == 2)) {
-                                                echo "Dành cho Nam";
-                                            } else {
-                                                echo "Danh mục chưa được Update!";
-                                            }
-                                            ?>
+                                            <?= $sp['name'] ?>
                                         </td>
                                         <td class="col-2 align-middle"><a href="?url=updateSp"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> |
                                             <a href="?url=xoaSp"><button type="button" class="btn btn-secondary btn-sm">Xóa</button></a>

@@ -39,6 +39,7 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
                 addProduct($nameSP, $photo, $priceSP, $quantitySP, $descriptionSP, $danhmuc);
                 echo '<script> window.location.href = "index.php?url=listSp";</script>';
             }
+            $danhmuc = listCategory();
             include 'products/addProduct.php';
             break;
         case 'listQtv':

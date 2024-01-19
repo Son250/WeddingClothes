@@ -39,8 +39,11 @@
                     <div>
                         <label for="">Danh mục</label>
                         <select name="idCategory">
-                            <option value="1">Dành Cho Nữ</option>
-                            <option value="2">Dành Cho Nam</option>
+                            <?php foreach ($danhmuc as $key => $value) : ?>
+                                <option value="<?php echo $value['id']; ?>">
+                                    <?php echo $value['name']; ?>
+                                </option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <button type="submit" name="btn-addProduct">
