@@ -67,9 +67,4 @@
             </div>
     </form>
 </div>
-<script>
-    function chuytrang() {
-        window.location.href = "index.php?url=listSp";
-    }
-</script>
 <!-- /.container-fluid -->
