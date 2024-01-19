@@ -1,0 +1,19 @@
+.container .content .form-addProduct form {
+    line-height: 30px;
+}
+
+.container .content .form-addProduct form input {
+    width: 100%;
+    height: 35px;
+
+}
+
+.container .content .form-addProduct form button {
+    border: none;
+    background-color: #264ec1;
+    color: white;
+    padding: 5px;
+    width: 100px;
+    border-radius: 5px;
+
+}

@@ -16,45 +16,50 @@
                                 <i class="fas fa-search fa-sm"></i>
                             </button>
                         </div>
+                        < </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th></th>
+                                    <th>Mã loại</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Ảnh</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Mô tả</th>
+                                    <th>Danh mục</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($listsp as $sp) : ?>
+                                    <tr>
+                                        <td class="align-middle text-center"><input type="checkbox" name="select[]" id="" sp=""></td>
+                                        <td class=" align-middle text-center"><?= $sp['id'] ?></td>
+                                        <td class="col-2 align-middle"><?= $sp['productName'] ?></td>
+                                        <td class="col-1 align-middle"><img src="../assets/uploads/<?= $sp['image'] ?>" alt="err" width="70px" height="100px"></td>
+                                        <td class="col-1 align-middle"><?= number_format($sp['price']) ?>Đ</td>
+                                        <td class="align-middle"><?= $sp['quantity'] ?></td>
+                                        <td class="col-3 align-middle"><?= $sp['description'] ?></td>
+
+                                        <td class="col-2 align-middle">
+                                            <?= $sp['name'] ?>
+
+                                        </td>
+                                        <td class="col-2 align-middle"><a href="?url=updateSp"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> |
+                                            <a href="?url=xoaSp"><button type="button" class="btn btn-secondary btn-sm">Xóa</button></a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" width="100%" cellspacing="0">
-                        <thead class="thead-light">
-                            <tr>
-                                <th></th>
-                                <th>Mã loại</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Ảnh</th>
-                                <th>Giá</th>
-                                <th>Số lượng</th>
-                                <th>Mô tả</th>
-                                <th>Danh mục</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach($listsp as $sp): ?>
-                                <tr>
-                                    <td class="align-middle text-center"><input type="checkbox" name="select[]" id="" sp=""></td>
-                                    <td class=" align-middle text-center"><?=$sp['id']?></td>
-                                    <td class="col-2 align-middle"><?=$sp['productName']?></td>
-                                    <td  class="col-1 align-middle"><img src="../uploads/<?=$sp['image']?>" alt="err" height="60px"></td>
-                                    <td  class="col-1 align-middle"><?=$sp['price']?></td>
-                                    <td  class="align-middle"><?=$sp['quantity']?></td>
-                                    <td  class="col-3 align-middle"><?=$sp['description']?></td>
-                                    <td  class="col-2 align-middle"><?=$sp['idCategory']?></td>
-                                    <td class="col-2 align-middle"><a href="?url=updateSp"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> | 
-                                        <a href="?url=xoaSp"><button type="button" class="btn btn-secondary btn-sm">Xóa</button></a></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
     </form>
 </div>
 <!-- /.container-fluid -->
