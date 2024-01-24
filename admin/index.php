@@ -85,6 +85,64 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
             $listsp = load_all_product($kyw);
             include 'products/listProducts.php';
             break;
+
+        case 'editSp':
+            if(isset($_GET['id']) && ($_GET['id']!="")){
+                $id = $_GET['id'];
+                $sp = load_one_sp($id);
+                if($sp){
+                    $id = $sp['id'];
+                    $danhmuc = $sp['idCategory'];
+                    $nameSP = $sp['productName'];
+                    $photo = $sp['image'];
+                    $descriptionSP = $sp['description'];
+                    $priceSP = $sp['price'];
+                    $quantitySP = $sp['quantity'];
+                    $option = $sp['option'];
+                }
+            }
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                $id = $_POST['id'];
+                $danhmuc = $_POST['idCategory'];
+                $nameSP = $_POST['productName'];
+                $photo = $_POST['image'];
+                if (isset($_FILES['image']) && $_FILES['image']['name'] != "") {
+                    $photo = time() . "_" . $_FILES['image']['name'];
+                    $uploadsDir = "../assets/uploads/";
+                    move_uploaded_file($_FILES['image']['tmp_name'], $uploadsDir . $photo);
+                }
+                $descriptionSP = $_POST['description'];
+                $priceSP = $_POST['price'];
+                $quantitySP = $_POST['quantity'];
+                $option = 0;
+                update_sp($id, $danhmuc, $nameSP, $photo, $descriptionSP, $priceSP, $quantitySP, $option);
+                echo '<script>
+                    alert("Bạn đã sửa sản phẩm thành công !");
+                    window.location.href="?url=listSp";
+                </script>';
+            }
+            $listDm = load_all_category("");
+            include 'products/editProduct.php';
+            break;
+
+        case 'xoaSp':
+            if(isset($_GET['id'])&&($_GET['id']!="")){
+                $id = $_GET['id'];
+                $sp = load_one_sp($id);
+                if($sp){
+                    unlink("../assets/uploads/".$sp['image']);
+                    delete_sp($sp['id']);
+                    echo '<script>
+                        alert("Bạn đã xóa sản phẩm thành công !");
+                        window.location.href="?url=listSp";
+                    </script>';
+                }
+            }
+            $listsp=load_all_product("",0);
+            include 'products/listProducts.php';
+            break;
+
+
         case 'addSp':
             $idCate = getCategory();
             if (isset($_POST['btn-addProduct'])) {
@@ -105,6 +163,7 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
             $danhmuc = listCategory();
             include 'products/addProduct.php';
             break;
+
         case 'listQtv':
             if (isset($_POST['search'])) {
                 $kyw = $_POST['kyw'];

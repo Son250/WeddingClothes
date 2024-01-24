@@ -33,3 +33,11 @@ function listCategory()
     $sql = "SELECT * FROM `category`";
     return getData($sql . false);
 }
+function update_sp($id, $danhmuc, $nameSP, $photo, $descriptionSP, $priceSP, $quantitySP, $option){
+    $sql = "UPDATE `product` SET idCategory='$danhmuc', productName='$nameSP', image='$photo', description='$descriptionSP', price='$priceSP', quantity='$quantitySP', option='$option' WHERE id='$id'";
+    return getData($sql);
+}
+function delete_sp($id){
+    $sql = "DELETE FROM product WHERE id = '$id'";
+    return getData($sql);
+}
