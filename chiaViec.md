@@ -10,3 +10,7 @@ Buổi 3:
 - Sơn: Gắn công cụ tạo bài viết CKeditor và sửa giao diện trang chủ tiếp
 - Giáp: Quản lý các liên hệ mà khách hàng gửi
 - Bách: Xây dựng chức năng Đăng nhập, đăng ký, quên mật khẩu (bên người dùng);
+
+Buổi 4:
+-Cường : Code trang chi tiết sp
+-Sơn: code trang chủ và danh mục

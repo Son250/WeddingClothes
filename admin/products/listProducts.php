@@ -16,7 +16,7 @@
                                 <i class="fas fa-search fa-sm"></i>
                             </button>
                         </div>
-                        < </div>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body">
@@ -32,6 +32,7 @@
                                     <th>Số lượng</th>
                                     <th>Mô tả</th>
                                     <th>Danh mục</th>
+                                    <th>Lượt xem</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -49,8 +50,11 @@
                                         <td class="col-2 align-middle">
                                             <?= $sp['name'] ?>
                                         </td>
-                                        <td class="col-2 align-middle"><a href="?url=editSp&id=<?=$sp['id']?>"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> |
-                                            <a href="?url=xoaSp&id=<?=$sp['id']?>"><button type="button" class="btn btn-secondary btn-sm">Xóa</button></a>
+                                        <td class="align-middle"><?= $sp['view'] ?></td>
+
+                                        <td class="col-2 align-middle">
+                                            <a href="?url=editSp&id=<?=$sp['id']?>"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a> |
+                                            <a href="?url=xoaSp&id=<?=$sp['id']?>" onclick="return confirm('Bạn chắc chắn muốn xóa không ?')"><button type="button" class="btn btn-secondary btn-sm">Xóa</button></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

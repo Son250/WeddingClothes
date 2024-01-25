@@ -1,14 +1,14 @@
 <section id="section-car-details" class="mt-5">
 
     <div class="container mt-2">
-        <p>Trang chủ > BMW M2 2020</p>
+        <p><a href="index.php">Trang chủ</a> > <?php echo $detailProduct['productName'] ?></p>
         <div class="row g-5">
             <div class="col-lg-6">
                 <div id="slider-carousel" class="owl-carousel">
                     <div class="item">
-                        <img src="../assets/images-view/car-single/1.jpg" alt="">
+                        <img src="../assets/uploads/<?php echo $detailProduct['image'] ?>" alt="">
                     </div>
-                    <div class="item">
+                    <!-- <div class="item">
                         <img src="../assets/images-view/car-single/2.jpg" alt="">
                     </div>
                     <div class="item">
@@ -16,46 +16,39 @@
                     </div>
                     <div class="item">
                         <img src="../assets/images-view/car-single/4.jpg" alt="">
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
             <div class="col-lg-3">
-                <h3>BMW M2 2020</h3>
-                <p>The BMW M2 is the high-performance version of the 2 Series 2-door coupé. The first generation of the M2 is the F87 coupé and is powered by turbocharged.</p>
+                <h3><?php echo $detailProduct['productName'] ?></h3>
+                <p><?php echo $detailProduct['description'] ?></p>
 
                 <div class="spacer-10"></div>
 
-                <h4>Specifications</h4>
+                <h4>Thông số sản phẩm</h4>
                 <div class="de-spec">
                     <div class="d-row">
-                        <span class="d-title">Body</span>
-                        <spam class="d-value">Sedan</spam>
+                        <span class="d-title">Vòng 1</span>
+                        <spam class="d-value">79-105</spam>
                     </div>
                     <div class="d-row">
-                        <span class="d-title">Seat</span>
-                        <spam class="d-value">2 seats</spam>
+                        <span class="d-title">Vòng 2</span>
+                        <spam class="d-value">45-70</spam>
                     </div>
                     <div class="d-row">
-                        <span class="d-title">Door</span>
-                        <spam class="d-value">2 doors</spam>
+                        <span class="d-title">Vòng 3</span>
+                        <spam class="d-value">80-120</spam>
                     </div>
                     <div class="d-row">
-                        <span class="d-title">Luggage</span>
-                        <spam class="d-value">150</spam>
+                        <span class="d-title">Chiều dài</span>
+                        <spam class="d-value">165 cm</spam>
                     </div>
                     <div class="d-row">
-                        <span class="d-title">Fuel Type</span>
+                        <span class="d-title">Chiều ngang vai</span>
                         <spam class="d-value">Hybird</spam>
                     </div>
-                    <div class="d-row">
-                        <span class="d-title">Engine</span>
-                        <spam class="d-value">3000</spam>
-                    </div>
-                    <div class="d-row">
-                        <span class="d-title">Year</span>
-                        <spam class="d-value">2020</spam>
-                    </div>
+                 
                     <div class="d-row">
                         <span class="d-title">Mileage</span>
                         <spam class="d-value">200</spam>
@@ -84,31 +77,32 @@
 
                 <div class="spacer-single"></div>
 
-                <h4>Features</h4>
+                <h4>Cách vệ sinh</h4>
                 <ul class="ul-style-2">
-                    <li>Bluetooth</li>
-                    <li>Multimedia Player</li>
-                    <li>Central Lock</li>
-                    <li>Sunroof</li>
+                    <li>Giặt bằng máy</li>
+                    <li>Giặt bằng tay</li>
+                    <li>Lau khăn ướt</li>
+                    <!-- <li>Sunroof</li> -->
                 </ul>
             </div>
 
             <div class="col-lg-3">
-                <div class="de-price text-center">
-                    Daily rate
-                    <h3>$265</h3>
+                <div class="box-title text-center">
+                    Giá thuê 1 ngày
+                    <h3><?php echo number_format($detailProduct['price']) ?>đ</h3>
                 </div>
+
                 <div class="spacer-30"></div>
                 <div class="de-box mb25">
                     <form name="contactForm" id='contact_form' method="post">
-                        <h4>Booking this car</h4>
+                        <h4>Đặt thuê sản phẩm</h4>
 
                         <div class="spacer-20"></div>
 
                         <div class="row">
                             <div class="col-lg-12 mb20">
-                                <h5>Pick Up Location</h5>
-                                <input type="text" name="PickupLocation" onfocus="geolocate()" placeholder="Enter your pickup location" id="autocomplete" autocomplete="off" class="form-control">
+                                <h5>Địa chỉ nhận</h5>
+                                <input type="text" name="PickupLocation" onfocus="geolocate()" placeholder="..." id="autocomplete" autocomplete="off" class="form-control">
 
                                 <div class="jls-address-preview jls-address-preview--hidden">
                                     <div class="jls-address-preview__header">
@@ -117,8 +111,8 @@
                             </div>
 
                             <div class="col-lg-12 mb20">
-                                <h5>Drop Off Location</h5>
-                                <input type="text" name="DropoffLocation" onfocus="geolocate()" placeholder="Enter your dropoff location" id="autocomplete2" autocomplete="off" class="form-control">
+                                <h5>Địa chỉ trả </h5>
+                                <input type="text" name="DropoffLocation" onfocus="geolocate()" placeholder="..." id="autocomplete2" autocomplete="off" class="form-control">
 
                                 <div class="jls-address-preview jls-address-preview--hidden">
                                     <div class="jls-address-preview__header">
@@ -127,7 +121,7 @@
                             </div>
 
                             <div class="col-lg-12 mb20">
-                                <h5>Pick Up Date & Time</h5>
+                                <h5>Ngày thuê</h5>
                                 <div class="date-time-field">
                                     <input type="text" id="date-picker" name="Pick Up Date" value="">
                                     <select name="Pick Up Time" id="pickup-time">
@@ -185,7 +179,7 @@
                             </div>
 
                             <div class="col-lg-12 mb20">
-                                <h5>Return Date & Time</h5>
+                                <h5>Ngày trả</h5>
                                 <div class="date-time-field">
                                     <input type="text" id="date-picker-2" name="Collection Date" value="">
                                     <select name="Collection Time" id="collection-time">
@@ -243,7 +237,7 @@
                             </div>
                         </div>
 
-                        <input type='submit' id='send_message' value='Book Now' class="btn-main btn-fullwidth">
+                        <input type='submit' id='send_message' value='Đặt ngay' class="btn-main btn-fullwidth bg-info">
 
                         <div class="clearfix"></div>
 

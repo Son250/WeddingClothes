@@ -33,11 +33,36 @@ function listCategory()
     $sql = "SELECT * FROM `category`";
     return getData($sql . false);
 }
-function update_sp($id, $danhmuc, $nameSP, $photo, $descriptionSP, $priceSP, $quantitySP, $option){
-    $sql = "UPDATE `product` SET idCategory='$danhmuc', productName='$nameSP', image='$photo', description='$descriptionSP', price='$priceSP', quantity='$quantitySP', option='$option' WHERE id='$id'";
+function update_sp($id, $danhmuc, $nameSP, $photo, $descriptionSP, $priceSP, $quantitySP, $option)
+{
+    if ($photo != "") {
+        $sql = "UPDATE `product` SET idCategory='$danhmuc', productName='$nameSP', image='$photo', description='$descriptionSP', price='$priceSP', quantity='$quantitySP', option='$option' WHERE id='$id'";
+    } else {
+        $sql = "UPDATE `product` SET idCategory='$danhmuc', productName='$nameSP', description='$descriptionSP', price='$priceSP', quantity='$quantitySP', option='$option' WHERE id='$id'";
+    }
+
     return getData($sql);
 }
-function delete_sp($id){
+function delete_sp($id)
+{
     $sql = "DELETE FROM product WHERE id = '$id'";
+    return getData($sql);
+}
+function getProductTop()
+{
+    $sql = "SELECT * FROM product order by view desc limit 5";
+
+    return getData($sql);
+}
+function getDm()
+{
+    $sql = "SELECT * FROM category";
+
+    return getData($sql);
+}
+
+function getProductDm($iddm)
+{
+    $sql = "SELECT * FROM product WHERE idCategory = $iddm LIMIT 0,4";
     return getData($sql);
 }
