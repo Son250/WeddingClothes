@@ -82,16 +82,7 @@
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
                                     <li><a class="menu-item" href="index.php">Trang chủ</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="02_dark-index-1.html">New: Homepage 1 Dark</a></li>
-                                            <li><a class="menu-item" href="02_dark-index-2.html">New: Homepage 2 Dark</a></li>
-                                            <li><a class="menu-item" href="index.html">Homepage Main</a></li>
-                                            <li><a class="menu-item" href="index-2.html">Homepage 2</a></li>
-                                            <li><a class="menu-item" href="index-3.html">Homepage 3</a></li>
-                                            <li><a class="menu-item" href="index-4.html">Homepage 4</a></li>
-                                            <li><a class="menu-item" href="index-5.html">Homepage 5</a></li>
-                                            <li><a class="menu-item" href="index-6.html">Homepage 6</a></li>
-                                        </ul>
+                                       
                                     </li>
                                     <li><a class="menu-item" href="cars.html">Váy cưới</a>
                                         <ul>
@@ -132,22 +123,7 @@
                                         </ul>
                                     </li> -->
                                     <li><a class="menu-item" href="?act=contact">Liên hệ</a>
-                                        <ul>
-                                            <li><a class="menu-item" href="news-standart-right-sidebar.html">News Standard</a>
-                                                <ul>
-                                                    <li><a class="menu-item" href="news-standart-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-standart-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-standart-no-sidebar.html">No Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a class="menu-item" href="news-grid-right-sidebar.html">News Grid</a>
-                                                <ul>
-                                                    <li><a class="menu-item" href="news-grid-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-grid-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a class="menu-item" href="news-grid-no-sidebar.html">No Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                       
                                     </li>
                                  
                                 </ul>

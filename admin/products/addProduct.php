@@ -22,7 +22,7 @@
                     </div>
                     <div>
                         <label for="">Ảnh sản phẩm</label>
-                        <input type="file" name="image" required>
+                        <input type="file" name="image">
                     </div>
                     <div>
                         <label for="">Giá sản phẩm</label>

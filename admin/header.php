@@ -131,6 +131,11 @@
                     <i class="fas fa-fw fa-comment"></i>
                     <span>Quản lý bình luận</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?url=listbl">
+                    <i class="fas fa-fw fa-comment"></i>
+                    <span>Quản lý liên hệ</span></a>
+            </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">

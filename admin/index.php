@@ -54,7 +54,7 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
                 } else {
                     update_category($id, $name);
                     echo '<script>
-                            alert("Bạn đã sửa danh mục thành công !");
+                            
                             window.location.href="index.php?url=listCategory";
                         </script>';
                 }
@@ -67,7 +67,7 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
                 $result = delete_category($id);
                 if (!$result) {
                     echo '<script>
-                                alert("Bạn đã xóa thành công !");
+                              
                                 window.location.href="index.php?url=listCategory";
                             </script>';
                 }
@@ -87,10 +87,10 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
             break;
 
         case 'editSp':
-            if(isset($_GET['id']) && ($_GET['id']!="")){
+            if (isset($_GET['id']) && ($_GET['id'] != "")) {
                 $id = $_GET['id'];
                 $sp = load_one_sp($id);
-                if($sp){
+                if ($sp) {
                     $id = $sp['id'];
                     $danhmuc = $sp['idCategory'];
                     $nameSP = $sp['productName'];
@@ -101,7 +101,7 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
                     $option = $sp['option'];
                 }
             }
-            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $id = $_POST['id'];
                 $danhmuc = $_POST['idCategory'];
                 $nameSP = $_POST['productName'];
@@ -117,7 +117,7 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
                 $option = 0;
                 update_sp($id, $danhmuc, $nameSP, $photo, $descriptionSP, $priceSP, $quantitySP, $option);
                 echo '<script>
-                    alert("Bạn đã sửa sản phẩm thành công !");
+                 
                     window.location.href="?url=listSp";
                 </script>';
             }
@@ -126,19 +126,19 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
             break;
 
         case 'xoaSp':
-            if(isset($_GET['id'])&&($_GET['id']!="")){
+            if (isset($_GET['id']) && ($_GET['id'] != "")) {
                 $id = $_GET['id'];
                 $sp = load_one_sp($id);
-                if($sp){
-                    unlink("../assets/uploads/".$sp['image']);
+                if ($sp) {
+                    unlink("../assets/uploads/" . $sp['image']);
                     delete_sp($sp['id']);
                     echo '<script>
-                        alert("Bạn đã xóa sản phẩm thành công !");
+                     
                         window.location.href="?url=listSp";
                     </script>';
                 }
             }
-            $listsp=load_all_product("",0);
+            $listsp = load_all_product("", 0);
             include 'products/listProducts.php';
             break;
 
@@ -233,12 +233,12 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
                     update_tk($id, $fullName, $userName, $password, $phoneNumber, $address, 0, $idRole);
                     if ($idRole == 1 || $idRole == 2) {
                         echo '<script>
-                                alert("Bạn đã sửa tài khoản thành công !");
+                           
                                 window.location.href="?url=listQtv";
                             </script>';
                     } else {
                         echo '<script>
-                                alert("Bạn đã sửa tài khoản thành công !");
+                               
                                 window.location.href="?url=listTv";
                             </script>';
                     }
